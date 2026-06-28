@@ -1,0 +1,46 @@
+{
+  "name": "convite-nathalia-e-matheus",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "@tanstack/react-table": "^8.21.3",
+    "autoprefixer": "^10.5.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.42.0",
+    "lucide-react": "^1.21.0",
+    "papaparse": "^5.5.4",
+    "postcss": "^8.5.15",
+    "react": "^19.2.7",
+    "react-countdown": "^2.3.6",
+    "react-dom": "^19.2.7",
+    "react-hook-form": "^7.80.0",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.6.0",
+    "react-intersection-observer": "^10.0.3",
+    "react-player": "^3.4.0",
+    "react-qr-code": "^2.2.0",
+    "react-router-dom": "^7.18.0",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^3.4.19",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "oxlint": "^1.69.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0"
+  }
+}
