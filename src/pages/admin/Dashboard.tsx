@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../../lib/supabase';
+import { supabase as _supabase } from '../../lib/supabase';
+const supabase = _supabase as any;
 import { Users, UserCheck, UserX, Gift } from 'lucide-react';
 import { motion } from 'framer-motion';
 

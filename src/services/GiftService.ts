@@ -1,4 +1,5 @@
-import { supabase } from '../lib/supabase';
+import { supabase as _supabase } from '../lib/supabase';
+const supabase = _supabase as any;
 import type { Database } from '../types/database.types';
 
 export type Gift = Database['public']['Tables']['gifts']['Row'];
@@ -7,7 +8,7 @@ export const GiftService = {
   // Lista todos os presentes
   async getGifts() {
     const { data, error } = await supabase
-      .from('gifts')
+      .from('gifts' as any)
       .select('*')
       .order('created_at', { ascending: false });
     
@@ -19,7 +20,7 @@ export const GiftService = {
   async reserveGift(giftId: string, guestName: string, phone: string) {
     // 1. Insere a transação
     const { error: txError } = await supabase
-      .from('gift_transactions')
+      .from('gift_transactions' as any)
       .insert({ 
         gift_id: giftId, 
         guest_name: guestName, 
@@ -31,7 +32,7 @@ export const GiftService = {
 
     // 2. Atualiza o status do presente para reservado
     const { error: giftError } = await supabase
-      .from('gifts')
+      .from('gifts' as any)
       .update({ status: 'reserved' })
       .eq('id', giftId);
       

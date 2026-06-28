@@ -9,7 +9,7 @@ const EVENT_DATE = new Date("2026-11-07T17:00:00-03:00");
 // Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } }
 };
 
 const fadeIn = {
@@ -19,7 +19,7 @@ const fadeIn = {
 
 const scaleUp = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } }
 };
 
 const staggerContainer = {
@@ -34,7 +34,7 @@ const staggerContainer = {
 
 const floatAnimation = {
   y: [0, -10, 0],
-  transition: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+  transition: { repeat: Infinity, duration: 4 }
 };
 
 export const Home = () => {
@@ -91,7 +91,7 @@ export const Home = () => {
         viewport={{ once: true }}
         variants={{
           hidden: { opacity: 0, scale: 1.05 },
-          visible: { opacity: 1, scale: 1, transition: { duration: 1.5, ease: 'easeOut' } }
+          visible: { opacity: 1, scale: 1, transition: { duration: 1.5 } }
         }}
         className="w-full relative h-[45vh] md:h-[55vh] overflow-hidden mask-image-gradient-bottom -mt-[8vh] md:-mt-[12vh]"
       >
@@ -181,7 +181,7 @@ export const Home = () => {
         viewport={{ once: true, margin: "-100px" }}
         variants={{
           hidden: { opacity: 0, scale: 1.05 },
-          visible: { opacity: 1, scale: 1, transition: { duration: 1.5, ease: 'easeOut' } }
+          visible: { opacity: 1, scale: 1, transition: { duration: 1.5 } }
         }}
         className="w-full relative h-[40vh] md:h-[60vh] overflow-hidden my-8 mask-image-gradient-both"
       >
@@ -307,7 +307,7 @@ export const Home = () => {
         viewport={{ once: true, margin: "-100px" }}
         variants={{
           hidden: { opacity: 0, scale: 1.05 },
-          visible: { opacity: 1, scale: 1, transition: { duration: 1.5, ease: 'easeOut' } }
+          visible: { opacity: 1, scale: 1, transition: { duration: 1.5 } }
         }}
         className="w-full relative h-[50vh] overflow-hidden mt-12 mask-image-gradient-top"
       >

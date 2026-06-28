@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
-import { supabase } from '../../lib/supabase';
+import { supabase as _supabase } from '../../lib/supabase';
+const supabase = _supabase as any;
 import { 
   useReactTable, 
   getCoreRowModel, 
@@ -33,13 +34,13 @@ export const Guests = () => {
   const fetchGuests = async () => {
     setLoading(true);
     const { data: guests, error } = await supabase
-      .from('guests')
+      .from('guests' as any)
       .select('*, group:groups(name)');
       
     if (error) {
       toast.error('Erro ao buscar convidados');
     } else {
-      const formatted = guests.map(g => ({
+      const formatted = guests.map((g: any) => ({
         id: g.id,
         first_name: g.first_name,
         last_name: g.last_name,
@@ -130,7 +131,7 @@ export const Guests = () => {
     // 1. Create group
     const lastName = newGuestName.split(' ').length > 1 ? newGuestName.split(' ').pop() : newGuestName;
     const { data: groupData, error: groupError } = await supabase
-      .from('groups')
+      .from('groups' as any)
       .insert({ name: `Família ${lastName}`, type: 'Outros' })
       .select()
       .single();
@@ -146,7 +147,7 @@ export const Guests = () => {
     const restName = newGuestName.split(' ').slice(1).join(' ');
     
     const { error: guestError } = await supabase
-      .from('guests')
+      .from('guests' as any)
       .insert({
         first_name: firstName,
         last_name: restName,

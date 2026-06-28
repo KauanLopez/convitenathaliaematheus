@@ -40,6 +40,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       guests: {
         Row: {
@@ -93,6 +94,15 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: [
+          {
+            foreignKeyName: "guests_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "groups"
+            referencedColumns: ["id"]
+          }
+        ]
       }
       gifts: {
         Row: {
@@ -125,6 +135,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       gift_transactions: {
         Row: {
@@ -154,6 +165,15 @@ export interface Database {
           reserved_at?: string | null
           created_at?: string
         }
+        Relationships: [
+          {
+            foreignKeyName: "gift_transactions_gift_id_fkey"
+            columns: ["gift_id"]
+            isOneToOne: false
+            referencedRelation: "gifts"
+            referencedColumns: ["id"]
+          }
+        ]
       }
       pix_settings: {
         Row: {
@@ -180,6 +200,7 @@ export interface Database {
           qr_code?: string | null
           enabled?: boolean
         }
+        Relationships: []
       }
       site_settings: {
         Row: {
@@ -224,6 +245,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
     }
     Views: {

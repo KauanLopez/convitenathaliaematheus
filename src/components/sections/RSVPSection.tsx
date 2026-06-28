@@ -3,7 +3,8 @@ import toast from 'react-hot-toast';
 import { Section } from '../ui/Section';
 import { Button } from '../ui/Button';
 import { Search, Loader2 } from 'lucide-react';
-import { GuestService, Guest, Group } from '../../services/GuestService';
+import { GuestService } from '../../services/GuestService';
+import type { Guest, Group } from '../../services/GuestService';
 import { Modal } from '../ui/Modal';
 
 export const RSVPSection = () => {
@@ -56,8 +57,8 @@ export const RSVPSection = () => {
       setGroupMembers(members);
       
       const initialIds = members
-        .filter(m => m.confirmation_status === 'confirmed' || guest.group.status === 'pending')
-        .map(m => m.id);
+        .filter((m: any) => m.confirmation_status === 'confirmed' || guest.group.status === 'pending')
+        .map((m: any) => m.id);
       setConfirmedIds(initialIds);
     } catch (error) {
       toast.error('Erro ao buscar a família.');

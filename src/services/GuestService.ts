@@ -1,4 +1,5 @@
-import { supabase } from '../lib/supabase';
+import { supabase as _supabase } from '../lib/supabase';
+const supabase = _supabase as any;
 import type { Database } from '../types/database.types';
 
 export type Guest = Database['public']['Tables']['guests']['Row'];
@@ -9,7 +10,7 @@ export const GuestService = {
   async searchGuests(query: string) {
     const searchTerm = `%${query}%`;
     const { data, error } = await supabase
-      .from('guests')
+      .from('guests' as any)
       .select('*, group:groups(*)')
       .or(`first_name.ilike.${searchTerm},last_name.ilike.${searchTerm}`)
       .limit(10);
@@ -21,7 +22,7 @@ export const GuestService = {
   // Retorna todos os integrantes de uma mesma família/grupo
   async getGroupMembers(groupId: string) {
     const { data, error } = await supabase
-      .from('guests')
+      .from('guests' as any)
       .select('*')
       .eq('group_id', groupId);
     
@@ -33,7 +34,7 @@ export const GuestService = {
   async confirmAttendance(groupId: string, confirmedGuestIds: string[], notes?: string) {
     // 1. Marca o grupo como confirmado
     const { error: groupError } = await supabase
-      .from('groups')
+      .from('groups' as any)
       .update({ status: 'confirmed', notes })
       .eq('id', groupId);
       
@@ -43,7 +44,7 @@ export const GuestService = {
 
     // 2. Por padrão, marca todos do grupo como recusados primeiro
     await supabase
-      .from('guests')
+      .from('guests' as any)
       .update({ 
         confirmation_status: 'declined', 
         confirmation_date: now,
@@ -54,7 +55,7 @@ export const GuestService = {
     // 3. Atualiza os selecionados como confirmados
     if (confirmedGuestIds.length > 0) {
       const { error: guestsError } = await supabase
-        .from('guests')
+        .from('guests' as any)
         .update({ confirmation_status: 'confirmed' })
         .in('id', confirmedGuestIds);
         

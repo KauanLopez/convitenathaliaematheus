@@ -14,7 +14,7 @@ export const Envelope = ({ onOpen }: EnvelopeProps) => {
         opacity: 0, 
         scale: 1.1,
         filter: "blur(10px)",
-        transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
+        transition: { duration: 1.2 }
       }}
     >
       <div className="relative h-full flex flex-col items-center justify-center">
