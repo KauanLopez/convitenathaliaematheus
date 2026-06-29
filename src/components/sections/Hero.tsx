@@ -27,7 +27,7 @@ export const Hero = () => {
             <p>Edson Montanholi</p>
           </div>
           <div className="space-y-2">
-            <p>Marilzena Mogi</p>
+            <p>Marilena Mogi</p>
             <p>Pedro Mogi</p>
           </div>
         </div>

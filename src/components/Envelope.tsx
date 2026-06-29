@@ -25,7 +25,7 @@ export const Envelope = ({ onOpen }: EnvelopeProps) => {
           className="h-full relative shadow-subtle flex items-center justify-center overflow-hidden"
         >
           <Image 
-            src="/envelope.png" 
+            src="/envelope.webp" 
             alt="Convite Fechado"
             fallbackText="Convite Fechado"
             containerClassName="h-[100vh] w-auto bg-transparent"

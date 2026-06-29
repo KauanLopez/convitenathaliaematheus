@@ -3,6 +3,7 @@ import { Image } from '../components/ui/Image';
 import { OrnamentalDivider } from '../components/ui/OrnamentalDivider';
 import Countdown, { type CountdownRenderProps } from 'react-countdown';
 import { MapPin, Wine, Search } from 'lucide-react';
+import { RSVPSearch } from '../components/RSVPSearch';
 
 const EVENT_DATE = new Date("2026-11-07T17:00:00-03:00");
 
@@ -154,7 +155,7 @@ export const Home = () => {
             <p>Edson Montanholi</p>
           </div>
           <div className="space-y-2">
-            <p>Marilzena Mogi</p>
+            <p>Marilena Mogi</p>
             <p>Pedro Mogi</p>
           </div>
         </div>
@@ -272,23 +273,10 @@ export const Home = () => {
         </div>
 
         <motion.div variants={fadeInUp} className="pt-8 flex flex-col items-center w-full max-w-sm mx-auto space-y-4">
-          <h3 className="font-subheading text-xs uppercase tracking-[0.2em] text-text-muted text-center font-semibold">
+          <h3 className="font-subheading text-xs uppercase tracking-[0.2em] text-text-muted text-center font-semibold mb-4">
             Confirmar Presença
           </h3>
-          <div className="relative w-full flex items-center border-b border-border-light focus-within:border-text-main transition-colors py-1 group">
-            <input 
-              type="text" 
-              placeholder="Digite seu nome para buscar..." 
-              className="w-full bg-transparent py-2 pl-2 pr-10 focus:outline-none placeholder:text-text-muted/50 text-sm text-text-main"
-            />
-            <motion.button 
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="absolute right-2 text-text-muted hover:text-text-main transition-colors"
-            >
-              <Search className="w-4 h-4 group-focus-within:text-text-main" />
-            </motion.button>
-          </div>
+          <RSVPSearch />
           <a 
             href="https://wa.me/5544998030529?text=Ol%C3%A1!%20Recebi%20o%20convite%20de%20casamento%20e%20gostaria%20de%20confirmar%20presen%C3%A7a"
             target="_blank"

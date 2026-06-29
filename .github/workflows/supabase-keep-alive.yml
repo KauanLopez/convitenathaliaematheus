@@ -1,0 +1,17 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Roda a cada 3 dias para garantir que o projeto não seja pausado (o limite é 7 dias)
+    - cron: '0 0 */3 * *'
+  workflow_dispatch: # Permite rodar manualmente se precisar
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase API
+        run: |
+          curl -s -X GET "https://zznwadpvwpzdkmawokrt.supabase.co/rest/v1/guests?select=id&limit=1" \
+          -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6bndhZHB2d3B6ZGttYXdva3J0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1ODYzNTcsImV4cCI6MjA5ODE2MjM1N30.znWkTLZ-nlDxxy2ohTWrY9Leq3g1b2lEJdmOiFKmVGQ" \
+          -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6bndhZHB2d3B6ZGttYXdva3J0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1ODYzNTcsImV4cCI6MjA5ODE2MjM1N30.znWkTLZ-nlDxxy2ohTWrY9Leq3g1b2lEJdmOiFKmVGQ"
