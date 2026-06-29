@@ -14,7 +14,7 @@ export const RSVPModal = ({ groupId, isOpen, onClose }: RSVPModalProps) => {
   const [guests, setGuests] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [groupName, setGroupName] = useState('');
+
 
   useEffect(() => {
     if (isOpen && groupId) {
@@ -34,7 +34,7 @@ export const RSVPModal = ({ groupId, isOpen, onClose }: RSVPModalProps) => {
       if (groupRes.error) throw groupRes.error;
       if (guestsRes.error) throw guestsRes.error;
 
-      setGroupName(groupRes.data.name);
+
       // Ensure local state reflects default 'pending' if it's null
       setGuests((guestsRes.data || []).map(g => ({
         ...g,

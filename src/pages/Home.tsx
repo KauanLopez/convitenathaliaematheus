@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Image } from '../components/ui/Image';
 import { OrnamentalDivider } from '../components/ui/OrnamentalDivider';
 import Countdown, { type CountdownRenderProps } from 'react-countdown';
-import { MapPin, Wine, Search } from 'lucide-react';
+import { MapPin, Wine } from 'lucide-react';
 import { RSVPSearch } from '../components/RSVPSearch';
 
 const EVENT_DATE = new Date("2026-11-07T17:00:00-03:00");
