@@ -278,7 +278,7 @@ export const Home = () => {
           </h3>
           <RSVPSearch />
           <a 
-            href="https://wa.me/5544998030529?text=Ol%C3%A1!%20Recebi%20o%20convite%20de%20casamento%20e%20gostaria%20de%20confirmar%20presen%C3%A7a"
+            href="https://wa.me/5544998030529?text=Ol%C3%A1!%20Recebi%20o%20convite%20e%20gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento%20da%20Nathalia%20e%20do%20Matheus."
             target="_blank"
             rel="noopener noreferrer"
             className="text-[11px] uppercase tracking-widest text-text-muted hover:text-text-main underline underline-offset-4 transition-colors pt-4"
